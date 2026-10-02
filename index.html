@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A simple task tracker deployed on Vercel." />
+  <title>TaskFlow</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <h1>TaskFlow</h1>
+      <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark mode">🌓</button>
+    </header>
+
+    <form id="task-form" class="task-form" autocomplete="off">
+      <input id="task-input" type="text" placeholder="What needs doing?" maxlength="120" required />
+      <select id="priority" aria-label="Priority">
+        <option value="low">Low</option>
+        <option value="medium" selected>Medium</option>
+        <option value="high">High</option>
+      </select>
+      <button type="submit" class="btn">Add</button>
+    </form>
+
+    <nav class="filters" aria-label="Filter tasks">
+      <button class="filter active" data-filter="all">All</button>
+      <button class="filter" data-filter="active">Active</button>
+      <button class="filter" data-filter="done">Done</button>
+    </nav>
+
+    <ul id="task-list" class="task-list"></ul>
+    <p id="empty" class="empty" hidden>Nothing here yet. Add your first task above.</p>
+
+    <footer class="footer">
+      <span id="count">0 tasks left</span>
+      <button id="clear-done" class="link-btn">Clear completed</button>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
